@@ -2,16 +2,26 @@
 <html lang="lv">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Progmāra papildinātās realitātes (AR) demo</title>
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
 </head>
-<body>
-<h3>Šī lapa darbojas tikai tad, ja to atver Android vai iOS viedierīcē, kas atbalsta papildināto realitāti</h3>
+<body style="font-size:20px">
+<p>Papildinātā realitāte darbojas tikai tad, ja to atver Android vai iOS viedierīcē, kas atbalsta papildināto realitāti</p>
 
-<model-viewer src="robot.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="commerce" shadow-intensity="1">
-    <button slot="ar-button" id="ar-button">
-        Apskati savā telpā
-    </button>
-</model-viewer>
-              
+    <model-viewer style="width:100%;height:50vh;margin:0 auto;" src="robot.glb" ios-src="robot.usdz" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="commerce" poster="poster.webp" shadow-intensity="1">
+        <div class="progress-bar hide" slot="progress-bar">
+            <div class="update-bar"></div>
+        </div>
+        
+        <div>
+            <button style="margin:0 auto;padding:20px;display:block;font-size:20px;" slot="ar-button" id="ar-button">
+                Apskati savā telpā
+            </button>
+        </div>
+        
+    </model-viewer>
+       
 </body>
 </html>
